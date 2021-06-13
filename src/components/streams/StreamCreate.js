@@ -35,6 +35,22 @@ class StreamCreate extends React.Component {
   }
 }
 
+const validate = (formValues) => {
+  const errors = {};
+
+  if (!formValues.title) {
+    // only ran if the user did not add  the title
+    errors.title = "You must enter a title";
+  }
+
+  if (!formValues.description) {
+    // only ran if the user did not add  the description
+    errors.title = "You must enter a description";
+  }
+
+  return errors;
+};
+
 export default reduxForm({
   form: "streamCreate",
 })(StreamCreate);
